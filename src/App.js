@@ -1,12 +1,15 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 import "./App.scss";
+import Navbar from "./components/navbar/Navbar";
 
-function App() {
-	return (
-		<div className="App">
-			<h1>City Tours</h1>
-		</div>
-	);
+class App extends Component {
+	render() {
+		return (
+			<Fragment>
+				<Navbar />
+			</Fragment>
+		);
+	}
 }
 
 export default App;

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./tour.scss";
 
 const Tour = ({ tour: { id, city, img, name, info }, removeTour }) => {
-	console.log(img);
+	const [showInfo, setShowInfo] = useState(false);
 
 	return (
 		<article className="tour">
@@ -18,10 +18,13 @@ const Tour = ({ tour: { id, city, img, name, info }, removeTour }) => {
 				<h5>
 					info{" "}
 					<span>
-						<i className="fas fa-caret-square-down" />
+						<i
+							className="fas fa-caret-square-down"
+							onClick={() => setShowInfo(!showInfo)}
+						/>
 					</span>
 				</h5>
-				<p>{info}</p>
+				{showInfo && <p>{info}</p>}
 			</div>
 		</article>
 	);

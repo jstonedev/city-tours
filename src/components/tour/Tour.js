@@ -8,7 +8,7 @@ const Tour = ({ tour: { id, city, img, name, info }, removeTour }) => {
 		<article className="tour">
 			<div className="img-container">
 				<img src={img} alt="tour" />
-				<span className="close-btn">
+				<span className="close-btn" onClick={() => removeTour(id)}>
 					<i className="fas fa-window-close" />
 				</span>
 			</div>
@@ -17,11 +17,8 @@ const Tour = ({ tour: { id, city, img, name, info }, removeTour }) => {
 				<h4>{city}</h4>
 				<h5>
 					info{" "}
-					<span>
-						<i
-							className="fas fa-caret-square-down"
-							onClick={() => setShowInfo(!showInfo)}
-						/>
+					<span onClick={() => setShowInfo(!showInfo)}>
+						<i className="fas fa-caret-square-down" />
 					</span>
 				</h5>
 				{showInfo && <p>{info}</p>}
